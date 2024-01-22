@@ -8,14 +8,6 @@
 import SwiftUI
 import Charts
 
-struct ScreenTimeData: Identifiable {
-    
-    var id = UUID().uuidString
-    var category: String
-    var startTime: Int
-    var duration: Int
-}
-
 // A view for an individual category card
 struct CategoryCard: View {
     var data: ScreenTimeData
