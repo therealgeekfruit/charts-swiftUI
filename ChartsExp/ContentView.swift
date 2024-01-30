@@ -45,29 +45,44 @@ struct ContentView: View {
         ScreenTimeData(category: "Social", startTime: 9, duration: 20),
         ScreenTimeData(category: "Entertainment", startTime: 10, duration: 40),
         ScreenTimeData(category: "Education", startTime: 10, duration: 10),
-        ScreenTimeData(category: "Health", startTime: 11, duration: 15),
+        ScreenTimeData(category: "Travel", startTime: 11, duration: 15),
         ScreenTimeData(category: "Social", startTime: 11, duration: 20),
         ScreenTimeData(category: "Games", startTime: 12, duration: 30),
         ScreenTimeData(category: "Productivity", startTime: 12, duration: 10),
         ScreenTimeData(category: "Education", startTime: 13, duration: 25),
         ScreenTimeData(category: "Entertainment", startTime: 13, duration: 20),
         ScreenTimeData(category: "Social", startTime: 14, duration: 15),
-        ScreenTimeData(category: "Health", startTime: 14, duration: 20),
+        ScreenTimeData(category: "Travel", startTime: 14, duration: 20),
         ScreenTimeData(category: "Games", startTime: 15, duration: 25),
         ScreenTimeData(category: "Productivity", startTime: 15, duration: 35),
         ScreenTimeData(category: "Education", startTime: 17, duration: 45),
-        ScreenTimeData(category: "Health", startTime: 18, duration: 30),
+        ScreenTimeData(category: "Travel", startTime: 18, duration: 30),
         ScreenTimeData(category: "Entertainment", startTime: 23, duration: 35)
     ]
     
     // Dictionary to map categories to colors
     let categoryColor: [String: Color] = [
         "Social": .blue,
-        "Entertainment": .red,
         "Games": .orange,
-        "Productivity": .purple,
+        "Entertainment": .red,
+        "Creativity": .indigo,
         "Education": .green,
-        "Health": .cyan
+        "Lifestyle": .yellow,
+        "Information & Reading": .green,
+        "Utilities": .pink,
+        "Travel": .teal,
+        "Health & Fitness": .cyan,
+        "Productivity & Finance": .purple,
+        "News": .pink,
+        "Shopping & Food": .mint,
+        "Other": .brown,
+        "Music": .indigo,
+        "Books": .teal,
+        "Medical": .pink,
+        "Weather": .blue,
+        "Sports": .red,
+        "Graphics & Design": .blue,
+        "Developer Tools": .blue
     ]
     
     // Define two columns for the grid
@@ -79,8 +94,13 @@ struct ContentView: View {
     var body: some View {
         Chart {
             ForEach (data) { d in
+                
+                let category = d.category
+                let color = categoryColor[category] ?? .gray
+                
                 BarMark(x: PlottableValue.value("Day", d.startTime), y: .value("Hours", d.duration))
-                    .foregroundStyle(by: .value("Type", d.category))
+                //To match the bars with custom color for category
+                    .foregroundStyle(color)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         }
