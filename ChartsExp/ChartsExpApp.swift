@@ -11,7 +11,7 @@ import SwiftUI
 struct ChartsExpApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            InteractiveDonutView()
         }
     }
 }

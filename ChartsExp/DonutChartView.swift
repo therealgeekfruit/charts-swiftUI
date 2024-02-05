@@ -9,6 +9,7 @@ import SwiftUI
 import Charts
 
 struct DonutChartView: View {
+    @State private var selectedCategory: String?
     
     var data = [
         ScreenTimeData(category: "Social", startTime: 2, duration: 10),
@@ -33,7 +34,7 @@ struct DonutChartView: View {
     ]
 
     
-    var aggregatedData: [ScreenTimeData] {
+    var aggregatedData: [ScreenTimeData] { 
             Dictionary(grouping: data, by: { $0.category })
                 .mapValues { $0.reduce(0) { $0 + $1.duration } }
                 .map { ScreenTimeData(category: $0.key, startTime: 0, duration: $0.value) }
@@ -44,11 +45,27 @@ struct DonutChartView: View {
             ForEach (aggregatedData) { d in
                 SectorMark(angle: .value("Hours", d.duration),
                            innerRadius: .ratio(0.7),
-                           angularInset: 2)
+                           angularInset: 5)
                     .foregroundStyle(by: .value("Category", d.category))
                     .cornerRadius(40)
             }
-        }.padding(.horizontal, 60)
+        }.chartAngleSelection(value: $selectedCategory)
+            .chartBackground{ chartProxy in
+                GeometryReader(content: { geometry in
+                    VStack {
+                        Text(selectedCategory ?? "sssss")
+                            .font(.title)
+                            .foregroundColor(.primary)
+                        }
+                })
+                
+            }
+            .overlay(
+                        Text(selectedCategory ?? "fff")
+                            .font(.title)
+                            .foregroundColor(.primary)
+                    )
+        .padding(.horizontal, 60)
     }
 }
 

@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A5D05082B6944D500F73136 /* InteractiveDonutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D05072B6944D500F73136 /* InteractiveDonutChart.swift */; };
 		8A99B42F2B5E24A20035CA6B /* DonutChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99B42E2B5E24A20035CA6B /* DonutChartView.swift */; };
 		8A99B4312B5E256C0035CA6B /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99B4302B5E256C0035CA6B /* DataPoint.swift */; };
+		8ABDDD482B708230005DA0B4 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDDD472B708230005DA0B4 /* CalendarView.swift */; };
+		8ABDDD4A2B71045A005DA0B4 /* WeeklyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDDD492B71045A005DA0B4 /* WeeklyChartView.swift */; };
 		8ACFACE32B1E1C130056154F /* ChartsExpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACFACE22B1E1C130056154F /* ChartsExpApp.swift */; };
 		8ACFACE52B1E1C130056154F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACFACE42B1E1C130056154F /* ContentView.swift */; };
 		8ACFACE72B1E1C150056154F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ACFACE62B1E1C150056154F /* Assets.xcassets */; };
@@ -36,8 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A5D05072B6944D500F73136 /* InteractiveDonutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveDonutChart.swift; sourceTree = "<group>"; };
 		8A99B42E2B5E24A20035CA6B /* DonutChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChartView.swift; sourceTree = "<group>"; };
 		8A99B4302B5E256C0035CA6B /* DataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
+		8ABDDD472B708230005DA0B4 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		8ABDDD492B71045A005DA0B4 /* WeeklyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChartView.swift; sourceTree = "<group>"; };
 		8ACFACDF2B1E1C130056154F /* ChartsExp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartsExp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ACFACE22B1E1C130056154F /* ChartsExpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsExpApp.swift; sourceTree = "<group>"; };
 		8ACFACE42B1E1C130056154F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,10 +104,13 @@
 		8ACFACE12B1E1C130056154F /* ChartsExp */ = {
 			isa = PBXGroup;
 			children = (
+				8ABDDD492B71045A005DA0B4 /* WeeklyChartView.swift */,
 				8A99B4302B5E256C0035CA6B /* DataPoint.swift */,
+				8ABDDD472B708230005DA0B4 /* CalendarView.swift */,
 				8ACFACE22B1E1C130056154F /* ChartsExpApp.swift */,
 				8ACFACE42B1E1C130056154F /* ContentView.swift */,
 				8A99B42E2B5E24A20035CA6B /* DonutChartView.swift */,
+				8A5D05072B6944D500F73136 /* InteractiveDonutChart.swift */,
 				8ACFACE62B1E1C150056154F /* Assets.xcassets */,
 				8ACFACE82B1E1C150056154F /* Preview Content */,
 			);
@@ -263,10 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABDDD4A2B71045A005DA0B4 /* WeeklyChartView.swift in Sources */,
 				8ACFACE52B1E1C130056154F /* ContentView.swift in Sources */,
 				8ACFACE32B1E1C130056154F /* ChartsExpApp.swift in Sources */,
+				8ABDDD482B708230005DA0B4 /* CalendarView.swift in Sources */,
 				8A99B4312B5E256C0035CA6B /* DataPoint.swift in Sources */,
 				8A99B42F2B5E24A20035CA6B /* DonutChartView.swift in Sources */,
+				8A5D05082B6944D500F73136 /* InteractiveDonutChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
