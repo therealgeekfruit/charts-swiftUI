@@ -58,7 +58,7 @@ struct MonthView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 4) {
             // Days of the week header
             HStack {
                 ForEach(daysOfWeek, id: \.self) { day in
@@ -74,7 +74,7 @@ struct MonthView: View {
             let rows = totalDays / 7 + (totalDays % 7 == 0 ? 0 : 1)
             
             ForEach(0..<rows, id: \.self) { row in
-                HStack {
+                HStack(spacing: 1) {
                     ForEach(0..<7, id: \.self) { column in
                         let day = row * 7 + column - firstDayOffset + 1
                         if day > 0 && day <= days {
@@ -93,7 +93,7 @@ struct MonthView: View {
                     }
                 }
             }
-        }
+        }.padding(16)
     }
     
     private func isDateSelectable(_ date: Date) -> Bool {
@@ -120,17 +120,27 @@ struct DayView: View {
     @Binding var isSelected: Bool
     
     var body: some View {
-        Text("\(day)")
-            .frame(width: 30, height: 30)
-            .background(isSelected ? Color.red : (isToday ? Color.blue : Color.clear))
-            .foregroundColor(isToday || isSelected ? Color.white : Color.primary)
-            .clipShape(Circle())
-            .overlay(
-                Circle().stroke(Color.gray, lineWidth: 1)
-                    .opacity(isToday || isSelected ? 0 : (date > Date() ? 0.5 : 1))
-            )
-            .padding(4)
-            .disabled(date > Date())
+        VStack(spacing: 0) { // Set the spacing to 0 to remove space between elements
+            Text("\(day)")
+                .font(.system(size: 14))
+                .foregroundColor(isToday || isSelected ? Color.white : Color.primary)
+                .frame(width: 28, height: 24) // Adjust the frame as needed
+            
+            Image("1_superhappyframe")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 36, height: 36)
+        }
+        .frame(width: 34, height: 60) // Adjust the overall frame size as needed
+        .padding(2) // Adjust padding around the VStack as needed
+        .background(isSelected ? Color.red : (isToday ? Color.blue : Color.clear))
+        .cornerRadius(20) // This will give you rounded corners
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.gray, lineWidth: 1)
+                .opacity(isToday || isSelected ? 0 : (date > Date() ? 0.5 : 1))
+        )
+        .disabled(date > Date())
     }
 }
 
